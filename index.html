@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RationGuard — Protecting Every Living Family</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="topbar">🇮🇳 Integrated Civil Death Registry — Public Distribution System · SDG-2 Zero Hunger</div>
+
+  <nav>
+    <div class="logo" onclick="gotoPage('home')">
+      <div class="logo-ico">🌾</div>
+      <div class="logo-txt">RationGuard <small>Smart PDS Fraud Prevention</small></div>
+    </div>
+    <div class="nav-links">
+      <button class="nb active" onclick="gotoPage('home')">Home</button>
+      <button class="nb" onclick="gotoPage('shopkeeper')">Shopkeeper</button>
+      <button class="nb" onclick="gotoPage('user')">Beneficiary</button>
+      <button class="nb" onclick="gotoPage('death')">Death Alert</button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ HOME ═══════════════ -->
+  <div id="page-home" class="page active">
+    <section class="hero">
+      <div class="hero-in">
+        <div>
+          <div class="hero-tag">🛡️ Fraud Prevention System</div>
+          <h1>Stop Ration Fraud.<br />Feed the <em>Living.</em></h1>
+          <p>RationGuard cross-checks the Civil Death Registry with every PDS beneficiary — automatically alerting and
+            blocking ration cards of deceased individuals before the next distribution cycle.</p>
+          <div class="hero-cta">
+            <button class="btn-saf" onclick="gotoPage('user')">Beneficiary Login</button>
+            <button class="btn-ghost" onclick="gotoPage('shopkeeper')">Shopkeeper Portal</button>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="hstats">
+            <div class="hs">
+              <div class="hs-n">2.4M+</div>
+              <div class="hs-l">Cards Verified</div>
+            </div>
+            <div class="hs">
+              <div class="hs-n">18,420</div>
+              <div class="hs-l">Frauds Blocked</div>
+            </div>
+            <div class="hs">
+              <div class="hs-n">99.2%</div>
+              <div class="hs-l">Accuracy</div>
+            </div>
+          </div>
+          <div
+            style="font-size:.68rem;color:#6b8f7a;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.65rem;">
+            Live Pipeline</div>
+          <div class="pl-row">
+            <div class="pl-dot g"></div><span>NDR Death Registry Query</span>
+            <div class="pl-bar">
+              <div class="pl-fill" style="width:100%;background:#4ade80;"></div>
+            </div>
+          </div>
+          <div class="pl-row">
+            <div class="pl-dot g"></div><span>UIDAI + PDS Match</span>
+            <div class="pl-bar">
+              <div class="pl-fill" style="width:100%;background:#4ade80;"></div>
+            </div>
+          </div>
+          <div class="pl-row">
+            <div class="pl-dot y"></div><span>Alert Generation</span>
+            <div class="pl-bar">
+              <div class="pl-fill" style="width:66%;background:#fbbf24;"></div>
+            </div>
+          </div>
+          <div class="pl-row">
+            <div class="pl-dot r"></div><span>Auto-Block (3 strikes)</span>
+            <div class="pl-bar">
+              <div class="pl-fill" style="width:30%;background:#f87171;"></div>
+            </div>
+          </div>
+          <div
+            style="display:flex;justify-content:space-between;margin-top:1.1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.08);">
+            <span style="font-size:.72rem;color:#6b8f7a;">Last scan: <strong style="color:#a8c5b0;">2 min
+                ago</strong></span>
+            <span style="font-size:.7rem;color:#4ade80;font-weight:700;">● RUNNING</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec cream-bg">
+      <div class="sec-inner">
+        <div class="sec-lbl">How It Works</div>
+        <div class="sec-h">From Death Certificate<br />to Card Block — Automatically</div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-n">01</div>
+            <div class="step-ico">📋</div>
+            <div class="step-t">Death Certificate Issued</div>
+            <div class="step-d">Civil Registry or NDR registers the death. Data enters the national database within 24
+              hours.</div>
+            <div class="step-arr">→</div>
+          </div>
+          <div class="step">
+            <div class="step-n">02</div>
+            <div class="step-ico">🔍</div>
+            <div class="step-t">Name + DOB + Address Match</div>
+            <div class="step-d">Fuzzy algorithm cross-checks Name, DOB, City, State and Aadhaar against PDS records at
+              ≥80% confidence.</div>
+            <div class="step-arr">→</div>
+          </div>
+          <div class="step">
+            <div class="step-n">03</div>
+            <div class="step-ico">⚠️</div>
+            <div class="step-t">Three Progressive Alerts</div>
+            <div class="step-d">Shopkeeper and family notified at each alert stage. 7-day grace window to dispute before
+              escalation.</div>
+            <div class="step-arr">→</div>
+          </div>
+          <div class="step">
+            <div class="step-n">04</div>
+            <div class="step-ico">🔒</div>
+            <div class="step-t">Auto-Block on Alert #3</div>
+            <div class="step-d">After 3 unresolved alerts, the member's card is automatically blocked in the PDS
+              beneficiary database.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec-inner">
+        <div class="sec-lbl">Features</div>
+        <div class="sec-h">Built With Purpose,<br />Not Just Code</div>
+        <div class="sec-sub">Every feature exists to protect food resources for real, living families — not to impress.
+        </div>
+        <div class="fg-grid">
+          <div class="fc">
+            <div class="fc-ico">🤖</div>
+            <div class="fc-t">Zero-Entry Auto Scan</div>
+            <div class="fc-d">Continuously queries NDR, UIDAI, and PDS every 24 hours. No officer needs to manually
+              trigger a check.</div>
+          </div>
+          <div class="fc">
+            <div class="fc-ico">🃏</div>
+            <div class="fc-t">3-Strike Block System</div>
+            <div class="fc-d">Three escalating alerts before any block. Families have a fair window to dispute or
+              verify. No sudden cut-offs.</div>
+          </div>
+          <div class="fc">
+            <div class="fc-ico">🏪</div>
+            <div class="fc-t">Shopkeeper Portal</div>
+            <div class="fc-d">FPS owners see real-time blocked-member warnings before issuing ration. Yellow, White,
+              Orange cards all managed.</div>
+          </div>
+          <div class="fc">
+            <div class="fc-ico">👨‍👩‍👧</div>
+            <div class="fc-t">Family Management</div>
+            <div class="fc-d">Beneficiaries can add members. Ration allocation auto-calculated by age — infants to
+              seniors.</div>
+          </div>
+          <div class="fc">
+            <div class="fc-ico">🔐</div>
+            <div class="fc-t">Secure Beneficiary Login</div>
+            <div class="fc-d">Ration card number + password. OTP-based forgot password for verified card holders only.
+            </div>
+          </div>
+          <div class="fc">
+            <div class="fc-ico">🌱</div>
+            <div class="fc-t">SDG-2 Zero Hunger</div>
+            <div class="fc-d">Directly reduces PDS leakage. Every blocked ghost card means more food reaches a family
+              that truly needs it.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- ═══════════════ SHOPKEEPER ═══════════════ -->
+  <div id="page-shopkeeper" class="page">
+    <div id="sk-login">
+      <div class="login-outer">
+        <div class="lcard">
+          <div class="lcard-ico" style="background:var(--forest-lt);">🏪</div>
+          <div class="lcard-h">Shop Portal</div>
+          <div class="lcard-sub">Fair Price Shop — Authorised Login</div>
+          <div class="fg"><label>Shop ID</label><input id="sk-id" type="text" placeholder="e.g. MH-PUNE-0047" /></div>
+          <div class="fg"><label>Password</label><input id="sk-pw" type="password" placeholder="Enter your password" />
+          </div>
+          <div id="sk-err" style="color:red; display:none; margin-top:8px;"></div>
+          <button class="bfull bf-for" onclick="skLogin()">Login to Shopkeeper Dashboard →</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="sk-dash" style="display:none;">
+      <div class="dash-hdr">
+        <div class="dash-hdr-in">
+          <div>
+            <div class="dash-h">🏪 Kothrud Fair Price Shop</div>
+            <div class="dash-s">Shop ID: <span>MH-PUNE-0047</span> · Maharashtra PDS</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:.8rem;">
+            <button class="show-alerts-btn" onclick="showAlertsPopup()">Show Alerts</button>
+            <button class="lout" onclick="skLogout()">Logout
+              ↗</button>
+          </div>
+        </div>
+      </div>
+      <div class="dash-body">
+        <div class="abn abn-d"><span class="abn-ico">🔒</span>
+          <div><strong>BLOCKED — Do NOT Issue Ration:</strong> Ramesh Patil (MH-2847-W) is deceased. Card auto-blocked
+            after 3 alerts on 01-Oct-2025.</div>
+        </div>
+        <div class="abn abn-w"><span class="abn-ico">⚠️</span>
+          <div><strong>Alert #2 — Verify with Family:</strong> Sunita Desai (MH-3902-Y) — Death record matched. Withhold
+            her share until resolved.</div>
+        </div>
+        <div class="hdiv"></div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:.9rem;">Ration
+          Card Registry</div>
+        <div class="ct-tabs">
+          <button class="ct-btn active" onclick="showCT('yellow',this)">🟡 Yellow Cards (BPL)</button>
+          <button class="ct-btn" onclick="showCT('white',this)">⚪ White Cards (APL)</button>
+          <button class="ct-btn" onclick="showCT('orange',this)">🟠 Orange Cards (AAY)</button>
+        </div>
+
+        <div id="ct-yellow">
+          <div class="rc-wrap">
+            <div class="rc rc-y" onclick="togT('ty1')">
+              <div class="rc-st ok">Active</div>
+              <div class="rc-lbl">🟡 Yellow Card — BPL Priority</div>
+              <div class="rc-num">MH-2201-Y-0047</div>
+              <div class="rc-cnt">👥 5 Members · tap to expand</div>
+            </div>
+            <div class="rc rc-y" onclick="togT('ty2')">
+              <div class="rc-st wn">⚠️ Alert</div>
+              <div class="rc-lbl">🟡 Yellow Card — BPL Priority</div>
+              <div class="rc-num">MH-3902-Y-0047</div>
+              <div class="rc-cnt">👥 3 Members · tap to expand</div>
+            </div>
+          </div>
+          <div id="ty1" class="wc" style="display:none;margin-bottom:1rem;">
+            <div class="wc-h">
+              <div class="wc-ico ico-g">🟡</div>
+              <div>
+                <h3>MH-2201-Y — Kharat Family</h3>
+                <p>Kothrud, Pune · 5 members · All active</p>
+              </div>
+            </div>
+            <div class="tw">
+              <table>
+                <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Relation</th>
+                  <th>Monthly Ration</th>
+                  <th>Status</th>
+                </tr>
+                <tr>
+                  <td>Anand Kharat</td>
+                  <td>45</td>
+                  <td>Head</td>
+                  <td>5 kg Rice + 3 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+                <tr>
+                  <td>Meena Kharat</td>
+                  <td>40</td>
+                  <td>Spouse</td>
+                  <td>5 kg Rice + 3 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+                <tr>
+                  <td>Raj Kharat</td>
+                  <td>18</td>
+                  <td>Son</td>
+                  <td>3 kg Rice + 2 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+                <tr>
+                  <td>Priya Kharat</td>
+                  <td>14</td>
+                  <td>Daughter</td>
+                  <td>3 kg Rice + 2 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+                <tr>
+                  <td>Tai Kharat</td>
+                  <td>72</td>
+                  <td>Mother</td>
+                  <td>4 kg Rice + 2 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div id="ty2" class="wc" style="display:none;margin-bottom:1rem;">
+            <div class="wc-h">
+              <div class="wc-ico ico-g">🟡</div>
+              <div>
+                <h3>MH-3902-Y — Desai Family</h3>
+                <p>Alert #2 active · 3 members</p>
+              </div>
+            </div>
+            <div class="abn abn-w" style="margin-bottom:1rem;"><span class="abn-ico">⚠️</span>
+              <div>Sunita Desai — death record matched. <strong>Withhold her ration</strong> until family submits
+                dispute or 3rd alert triggers block.</div>
+            </div>
+            <div class="tw">
+              <table>
+                <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Relation</th>
+                  <th>Monthly Ration</th>
+                  <th>Status</th>
+                </tr>
+                <tr class="dr">
+                  <td>Sunita Desai</td>
+                  <td>67</td>
+                  <td>Mother</td>
+                  <td>4 kg Rice + 2 kg Wheat</td>
+                  <td><span class="badge b-w">⚠️ Alert #2</span></td>
+                </tr>
+                <tr>
+                  <td>Vijay Desai</td>
+                  <td>42</td>
+                  <td>Son</td>
+                  <td>5 kg Rice + 3 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+                <tr>
+                  <td>Kavya Desai</td>
+                  <td>16</td>
+                  <td>Granddaughter</td>
+                  <td>3 kg Rice + 2 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div id="ct-white" style="display:none;">
+          <div class="rc-wrap">
+            <div class="rc rc-w" onclick="togT('tw1')">
+              <div class="rc-st ok">Active</div>
+              <div class="rc-lbl">⚪ White Card — APL</div>
+              <div class="rc-num">MH-1103-W-0047</div>
+              <div class="rc-cnt">👥 4 Members · tap to expand</div>
+            </div>
+            <div class="rc rc-w" onclick="togT('tw2')">
+              <div class="rc-st bl">🔒 Blocked</div>
+              <div class="rc-lbl">⚪ White Card — APL</div>
+              <div class="rc-num">MH-2847-W-0047</div>
+              <div class="rc-cnt">👥 2 Members · tap to expand</div>
+            </div>
+          </div>
+          <div id="tw1" class="wc" style="display:none;margin-bottom:1rem;">
+            <div class="wc-h">
+              <div class="wc-ico ico-k">⚪</div>
+              <div>
+                <h3>MH-1103-W — More Family</h3>
+                <p>Kothrud · All active</p>
+              </div>
+            </div>
+            <div class="tw">
+              <table>
+                <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Relation</th>
+                  <th>Monthly Ration</th>
+                  <th>Status</th>
+                </tr>
+                <tr>
+                  <td>Suresh More</td>
+                  <td>50</td>
+                  <td>Head</td>
+                  <td>5 kg Rice + 3 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+                <tr>
+                  <td>Asha More</td>
+                  <td>45</td>
+                  <td>Spouse</td>
+                  <td>5 kg Rice + 3 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+                <tr>
+                  <td>Arun More</td>
+                  <td>22</td>
+                  <td>Son</td>
+                  <td>4 kg Rice + 2 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+                <tr>
+                  <td>Sneha More</td>
+                  <td>19</td>
+                  <td>Daughter</td>
+                  <td>4 kg Rice + 2 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div id="tw2" class="wc" style="display:none;margin-bottom:1rem;">
+            <div class="wc-h">
+              <div class="wc-ico ico-r">⚪</div>
+              <div>
+                <h3>MH-2847-W — Patil Family</h3>
+                <p>1 member permanently blocked</p>
+              </div>
+            </div>
+            <div class="abn abn-d" style="margin-bottom:1rem;"><span class="abn-ico">🔒</span>
+              <div><strong>Card partially blocked.</strong> Ramesh Patil is deceased. No ration to be issued for him.
+                Lata Patil continues normally.</div>
+            </div>
+            <div class="tw">
+              <table>
+                <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Relation</th>
+                  <th>Monthly Ration</th>
+                  <th>Status</th>
+                </tr>
+                <tr class="dr">
+                  <td>Ramesh Patil</td>
+                  <td>70</td>
+                  <td>Head</td>
+                  <td>—</td>
+                  <td><span class="badge b-d">🔒 Blocked</span></td>
+                </tr>
+                <tr>
+                  <td>Lata Patil</td>
+                  <td>65</td>
+                  <td>Spouse</td>
+                  <td>5 kg Rice + 3 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div id="ct-orange" style="display:none;">
+          <div class="rc-wrap">
+            <div class="rc rc-o" onclick="togT('to1')">
+              <div class="rc-st ok">Active</div>
+              <div class="rc-lbl">🟠 Orange Card — Antyodaya AAY</div>
+              <div class="rc-num">MH-4451-O-0047</div>
+              <div class="rc-cnt">👥 6 Members · tap to expand</div>
+            </div>
+          </div>
+          <div id="to1" class="wc" style="display:none;">
+            <div class="wc-h">
+              <div class="wc-ico ico-s">🟠</div>
+              <div>
+                <h3>MH-4451-O — Shinde Family</h3>
+                <p>Kothrud · AAY Priority · 6 members</p>
+              </div>
+            </div>
+            <div class="tw">
+              <table>
+                <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Relation</th>
+                  <th>Monthly Ration</th>
+                  <th>Status</th>
+                </tr>
+                <tr>
+                  <td>Baban Shinde</td>
+                  <td>55</td>
+                  <td>Head</td>
+                  <td>7 kg Rice + 5 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+                <tr>
+                  <td>Sarita Shinde</td>
+                  <td>50</td>
+                  <td>Spouse</td>
+                  <td>7 kg Rice + 5 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+                <tr>
+                  <td>Manoj Shinde</td>
+                  <td>28</td>
+                  <td>Son</td>
+                  <td>5 kg Rice + 3 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+                <tr>
+                  <td>Pooja Shinde</td>
+                  <td>24</td>
+                  <td>Daughter</td>
+                  <td>5 kg Rice + 3 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+                <tr>
+                  <td>Balu Shinde</td>
+                  <td>8</td>
+                  <td>Son (Child)</td>
+                  <td>2 kg Rice + 1 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+                <tr>
+                  <td>Aai Shinde</td>
+                  <td>80</td>
+                  <td>Mother (Senior)</td>
+                  <td>4 kg Rice + 3 kg Wheat</td>
+                  <td><span class="badge b-ok">✓ Active</span></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="hdiv"></div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:1rem;">User
+          Notifications</div>
+        <div class="ni"><span class="ni-ico">➕</span>
+          <div>
+            <div class="ni-t">Add Member Request</div>
+            <div class="ni-d">Card MH-2201-Y — Anand Kharat requests to add newborn <strong>Arjun Kharat</strong> (0
+              yrs). Aadhaar pending.</div>
+            <div class="ni-tm">2 hours ago</div>
+          </div><span class="badge b-b" style="margin-left:auto;white-space:nowrap;">Pending</span>
+        </div>
+        <div class="ni"><span class="ni-ico">⚠️</span>
+          <div>
+            <div class="ni-t">Death Alert Dispute</div>
+            <div class="ni-d">Card MH-3902-Y — Family disputes Sunita Desai alert. Submitted Aadhaar + Voter ID as
+              proof.</div>
+            <div class="ni-tm">1 day ago</div>
+          </div><span class="badge b-w" style="margin-left:auto;white-space:nowrap;">Review</span>
+        </div>
+        <div class="ni"><span class="ni-ico">✅</span>
+          <div>
+            <div class="ni-t">Ration Acknowledgement</div>
+            <div class="ni-d">Card MH-1103-W — Suresh More confirmed receipt of October 2025 quota. All 4 members
+              collected.</div>
+            <div class="ni-tm">3 days ago</div>
+          </div><span class="badge b-ok" style="margin-left:auto;white-space:nowrap;">Done</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════ USER ═══════════════ -->
+  <div id="page-user" class="page">
+    <div id="u-login">
+      <div class="login-outer">
+        <div class="lcard">
+          <div class="lcard-ico" style="background:var(--saffron-lt);">🌾</div>
+          <div class="lcard-h">Beneficiary Login</div>
+          <div class="lcard-sub">Access your ration card, family &amp; monthly allocation</div>
+          <div class="ttog"><button class="ttb active" onclick="uTab('l')">Login</button><button class="ttb"
+              onclick="uTab('f')">Forgot Password</button></div>
+          <div id="ut-l">
+            <div class="fg"><label>Ration Card Number</label><input id="u-card" type="text"
+                placeholder="e.g. MH-2201-Y" /></div>
+            <div class="fg"><label>Password</label><input id="u-pw" type="password" placeholder="Enter your password" />
+            </div>
+            <div id="u-err" style="color:red; display:none; margin-top:8px;"></div>
+            <div class="fgt"><a onclick="uTab('f')">Forgot your password?</a></div>
+            <button class="bfull bf-saf" onclick="uLogin()">Login to My Ration Account →</button>
+          </div>
+          <div id="ut-f" style="display:none;">
+            <div class="abn abn-ok" style="margin-bottom:1rem;"><span class="abn-ico">ℹ️</span>
+              <div>An OTP will be sent to your registered mobile number to reset your password.</div>
+            </div>
+            <div class="fg"><label>Ration Card Number</label><input type="text" placeholder="MH-XXXX-Y" /></div>
+            <div class="fg"><label>Registered Mobile Number</label><input type="text" placeholder="+91 98765 43210" />
+            </div>
+            <button class="bfull bf-saf">Send OTP →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="u-dash" style="display:none;">
+      <div class="dash-hdr">
+        <div class="dash-hdr-in">
+          <div>
+            <div class="dash-h">Welcome, Anand Kharat 👋</div>
+            <div class="dash-s">Card: <span>MH-2201-Y</span> · Yellow (BPL) · Kothrud, Pune</div>
+          </div>
+          <div style="display:flex;gap:.75rem;align-items:center;">
+            <button class="btn-saf" style="font-size:.8rem;padding:.58rem 1.1rem;"
+              onclick="document.getElementById('add-modal').classList.add('open')">+ Add Member</button>
+            <button class="lout" onclick="uLogout()">Logout ↗</button>
+          </div>
+        </div>
+      </div>
+      <div class="dash-body">
+        <div class="abn abn-ok" style="margin-bottom:1.5rem;">
+          <span class="abn-ico">✅</span>
+          <div id="cardMessage">
+            Your ration card is <strong>Active</strong> — no alerts.
+          </div>
+        </div>
+        <div class="g2">
+          <div class="wc">
+            <div class="wc-h">
+              <div class="wc-ico ico-f">👨‍👩‍👧</div>
+              <div>
+                <h3>Family Ration Allocation</h3>
+                <p>Monthly entitlement · age-based policy</p>
+              </div>
+            </div>
+
+            <!-- Dynamic members will come here -->
+            <div id="membersContainer"></div>
+
+            <!-- TOTAL -->
+            <div id="totalBox"
+              style="border-top:2px dashed var(--border);margin-top:.75rem;padding-top:.85rem;display:flex;justify-content:space-between;align-items:center;">
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1.25rem;">
+            <div class="wc">
+              <div class="wc-h">
+                <div class="wc-ico ico-s">🪪</div>
+                <div>
+                  <h3>Card Details</h3>
+                  <p>Your ration card information</p>
+                </div>
+              </div>
+              <div class="dkv">
+                <div>
+                  <div class="kv-lbl">Card Type</div>
+                  <div class="kv-v">🟡 Yellow — BPL</div>
+                </div>
+                <div>
+                  <div class="kv-lbl">Card Number</div>
+                  <div class="kv-v" style="font-family:'DM Mono',monospace;font-size:.88rem;">MH-2201-Y</div>
+                </div>
+                <div>
+                  <div class="kv-lbl">Assigned Shop</div>
+                  <div class="kv-v">MH-PUNE-0047</div>
+                </div>
+                <div>
+                  <div class="kv-lbl">District</div>
+                  <div class="kv-v">Pune, MH</div>
+                </div>
+                <div>
+                  <div class="kv-lbl">Alert Status</div>
+                  <div class="kv-v"><span class="stamp st-g">Clear</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="wc">
+              <div class="wc-h">
+                <div class="wc-ico ico-k">🔔</div>
+                <div>
+                  <h3>Notifications</h3>
+                  <p>Alerts and updates for your card</p>
+                </div>
+              </div>
+              <div id="notificationBox" style="display:flex;flex-direction:column;gap:10px;"></div>
+              <div class="ni"><span class="ni-ico">➕</span>
+                <div>
+                  <div class="ni-t">Add Member — Pending</div>
+                  <div class="ni-d">Newborn Arjun Kharat request sent to FPS. 3–5 days.</div>
+                  <div class="ni-tm">2 hours ago</div>
+                </div>
+              </div>
+              <div class="ni"><span class="ni-ico">📋</span>
+                <div>
+                  <div class="ni-t">Annual Verification Due</div>
+                  <div class="ni-d">Visit Kothrud FPS by 30 Nov for Aadhaar seeding.</div>
+                  <div class="ni-tm">Upcoming</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wc" style="margin-top:1.5rem;">
+          <div class="wc-h">
+            <div class="wc-ico ico-k">📊</div>
+            <div>
+              <h3>Age-Based Ration Policy</h3>
+              <p>Government PDS entitlement — applied automatically per member</p>
+            </div>
+          </div>
+          <div class="tw">
+            <table>
+              <tr>
+                <th>Age Group</th>
+                <th>Category</th>
+                <th>Rice / month</th>
+                <th>Wheat / month</th>
+                <th>Total</th>
+              </tr>
+              <tr>
+                <td>0 – 5 years</td>
+                <td>Infant</td>
+                <td>1 kg</td>
+                <td>0.5 kg</td>
+                <td><strong>1.5 kg</strong></td>
+              </tr>
+              <tr>
+                <td>6 – 12 years</td>
+                <td>Child</td>
+                <td>2 kg</td>
+                <td>1 kg</td>
+                <td><strong>3 kg</strong></td>
+              </tr>
+              <tr>
+                <td>13 – 18 years</td>
+                <td>Adolescent</td>
+                <td>3 kg</td>
+                <td>2 kg</td>
+                <td><strong>5 kg</strong></td>
+              </tr>
+              <tr>
+                <td>19 – 60 years</td>
+                <td>Adult</td>
+                <td>5 kg</td>
+                <td>3 kg</td>
+                <td><strong>8 kg</strong></td>
+              </tr>
+              <tr>
+                <td>61 + years</td>
+                <td>Senior Citizen</td>
+                <td>4 kg</td>
+                <td>2 kg</td>
+                <td><strong>6 kg</strong></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════ DEATH ALERT ═══════════════ -->
+  <div id="page-death" class="page">
+    <div style="max-width:1100px;margin:0 auto;padding:2.5rem 2.5rem;">
+      <div
+        style="font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--saffron);margin-bottom:.5rem;">
+        Death Alert System</div>
+      <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;margin-bottom:.5rem;">CDR — PDS
+        Integration</div>
+      <p style="color:var(--muted);font-size:.9rem;margin-bottom:2rem;line-height:1.65;max-width:600px;">Automated
+        cross-check between the Civil Death Registry and PDS Beneficiary Database. Runs every 24 hours. Zero human
+        intervention needed to trigger alerts.</p>
+
+      <!-- PIPELINE -->
+      <div class="wc" style="margin-bottom:2rem;">
+        <div style="font-weight:700;font-size:.93rem;margin-bottom:1.1rem;">🔄 Auto-Scan Pipeline</div>
+        <div class="steps" style="background:var(--cream);border-radius:10px;padding:.85rem;">
+          <div class="step" style="padding:.9rem .7rem;">
+            <div class="step-ico">📋</div>
+            <div class="step-t" style="font-size:.8rem;">NDR Query</div>
+            <div class="step-d" style="font-size:.72rem;">Daily midnight</div>
+            <div class="step-arr">→</div>
+          </div>
+          <div class="step" style="padding:.9rem .7rem;">
+            <div class="step-ico">🔍</div>
+            <div class="step-t" style="font-size:.8rem;">Name + DOB Match</div>
+            <div class="step-d" style="font-size:.72rem;">Fuzzy ≥ 85%</div>
+            <div class="step-arr">→</div>
+          </div>
+          <div class="step" style="padding:.9rem .7rem;">
+            <div class="step-ico">🏠</div>
+            <div class="step-t" style="font-size:.8rem;">Address Verify</div>
+            <div class="step-d" style="font-size:.72rem;">City + State + PIN</div>
+            <div class="step-arr">→</div>
+          </div>
+          <div class="step" style="padding:.9rem .7rem;">
+            <div class="step-ico">🆔</div>
+            <div class="step-t" style="font-size:.8rem;">Aadhaar Check</div>
+            <div class="step-d" style="font-size:.72rem;">UIDAI API</div>
+            <div class="step-arr">→</div>
+          </div>
+          <div class="step" style="padding:.9rem .7rem;">
+            <div class="step-ico">⚠️</div>
+            <div class="step-t" style="font-size:.8rem;">Alert Raised</div>
+            <div class="step-d" style="font-size:.72rem;">Shop + Family</div>
+            <div class="step-arr">→</div>
+          </div>
+          <div class="step" style="padding:.9rem .7rem;">
+            <div class="step-ico">🔒</div>
+            <div class="step-t" style="font-size:.8rem;">Auto-Block</div>
+            <div class="step-d" style="font-size:.72rem;">After 3 alerts</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="g2">
+        <div class="wc">
+          <div class="wc-h">
+            <div class="wc-ico ico-r">📝</div>
+            <div>
+              <h3>Submit Death Alert</h3>
+              <p>For family members or CDR officers</p>
+            </div>
+          </div>
+          <div class="fg">
+            <label>Deceased Person's Full Name</label>
+            <input id="alert-name" type="text" placeholder="As on ration card" />
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem;">
+            <div class="fg">
+              <label>Date of Birth</label>
+              <input id="alert-dob" type="date" />
+            </div>
+            <div class="fg">
+              <label>Date of Death</label>
+              <input id="alert-dod" type="date" />
+            </div>
+          </div>
+
+          <div class="fg">
+            <label>Aadhaar Number</label>
+            <input id="alert-aadhaar" type="text" placeholder="12-digit Aadhaar" />
+          </div>
+
+          <div class="fg">
+            <label>Ration Card Number</label>
+            <input id="alert-card" type="text" placeholder="MH-XXXX-Y" />
+          </div>
+
+          <div class="fg">
+            <label>Death Certificate Number</label>
+            <input id="alert-dc" type="text" placeholder="DC-XXXXXX" />
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem;">
+            <div class="fg"><label>State</label><select>
+                <option>Maharashtra</option>
+                <option>Karnataka</option>
+                <option>Uttar Pradesh</option>
+                <option>Gujarat</option>
+                <option>Tamil Nadu</option>
+              </select></div>
+            <div class="fg"><label>City / District</label><input type="text" placeholder="e.g. Pune" /></div>
+          </div>
+          <div class="fg"><label>Reported By (Name + Relation)</label><input type="text"
+              placeholder="e.g. Vijay Desai, Son" /></div>
+          <button class="bfull bf-saf" onclick="submitAlert()">Submit Death Alert →</button>
+        </div>
+
+        <div>
+          <div class="wc" style="margin-bottom:1.25rem;">
+            <div class="wc-h">
+              <div class="wc-ico ico-r">⚠️</div>
+              <div>
+                <h3>Active Alerts</h3>
+                <p>2 cases currently under review</p>
+              </div>
+            </div>
+            <div class="da wn">
+              <div class="da-badge"><span class="badge b-w">Alert 2 / 3</span></div>
+              <div class="da-n">Sunita Desai</div>
+              <div class="da-m">RC: MH-3902-Y · DOB: 12 Mar 1958 · DC: DC-882341 · 28-Sep-2025 · Pune</div>
+              <div class="da-dots">
+                <div class="da-dot f"></div>
+                <div class="da-dot f"></div>
+                <div class="da-dot e"></div>
+              </div>
+              <div class="da-cd">⏳ Auto-block in <strong>7 days</strong> if unresolved</div>
+            </div>
+            <div class="da bl" style="margin-top:.8rem;">
+              <div class="da-badge"><span class="badge b-d">🔒 Blocked</span></div>
+              <div class="da-n">Ramesh Patil</div>
+              <div class="da-m">RC: MH-2847-W · DOB: 05 Jun 1955 · DC: DC-771209 · 01-Sep-2025 · Pune</div>
+              <div class="da-dots">
+                <div class="da-dot f"></div>
+                <div class="da-dot f"></div>
+                <div class="da-dot f"></div>
+              </div>
+              <div class="da-cd" style="color:var(--rust);">✓ Auto-blocked on 01-Oct-2025 after 3 alerts</div>
+            </div>
+          </div>
+          <div class="wc">
+            <div class="wc-h">
+              <div class="wc-ico ico-f">🔍</div>
+              <div>
+                <h3>Match Confidence</h3>
+                <p>Current case: Sunita Desai</p>
+              </div>
+            </div>
+            <div class="ma-row"><span class="ma-lbl">Name (Fuzzy)</span>
+              <div class="ma-track">
+                <div class="ma-fill" style="width:90%;"></div>
+              </div><span class="ma-pct">90%</span>
+            </div>
+            <div class="ma-row"><span class="ma-lbl">Date of Birth</span>
+              <div class="ma-track">
+                <div class="ma-fill" style="width:100%;"></div>
+              </div><span class="ma-pct">100%</span>
+            </div>
+            <div class="ma-row"><span class="ma-lbl">City + State</span>
+              <div class="ma-track">
+                <div class="ma-fill" style="width:85%;"></div>
+              </div><span class="ma-pct">85%</span>
+            </div>
+            <div class="ma-row"><span class="ma-lbl">Aadhaar Seed</span>
+              <div class="ma-track">
+                <div class="ma-fill" style="width:100%;"></div>
+              </div><span class="ma-pct">100%</span>
+            </div>
+            <div
+              style="margin-top:.75rem;padding:.6rem .85rem;background:var(--forest-lt);border-radius:8px;font-size:.8rem;color:var(--forest);border:1px solid #b8d9c0;">
+              ✅ Combined score <strong>94%</strong> — exceeds 80% threshold. Alert valid.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL -->
+  <div class="mb" id="add-modal" onclick="closeM(event)">
+    <div class="mbox">
+      <div class="m-h">➕ Add New Family Member</div>
+
+      <div class="fg">
+        <label>Full Name (as on Aadhaar)</label>
+        <input id="member-name" type="text" placeholder="Full name" />
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.85rem;">
+        <div class="fg">
+          <label>Date of Birth</label>
+          <input id="member-dob" type="date" />
+        </div>
+
+        <div class="fg">
+          <label>Gender</label>
+          <select id="member-gender">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="fg">
+        <label>Relation to Head</label>
+        <select id="member-relation">
+          <option>Spouse</option>
+          <option>Son</option>
+          <option>Daughter</option>
+          <option>Father</option>
+          <option>Mother</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="fg">
+        <label>Aadhaar Number</label>
+        <input id="member-aadhaar" type="text" placeholder="XXXX XXXX XXXX" maxlength="12" />
+      </div>
+
+      <div class="abn abn-ok" style="font-size:.8rem;">
+        <span class="abn-ico">ℹ️</span>
+        <div>Ration entitlement will be auto-calculated by age as per PDS rules once approved.</div>
+      </div>
+
+      <div class="m-ft">
+        <button class="bsm bsm-g" onclick="document.getElementById('add-modal').classList.remove('open')">
+          Cancel
+        </button>
+        <button class="bsm bsm-s" onclick="addMember()">Submit Request</button>
+      </div>
+    </div>
+  </div>
+  <div id="alertsPopup" class="alert-popup">
+    <div class="alert-popup-content">
+      <button class="close-popup" onclick="closeAlertsPopup()">X</button>
+
+      <div class="popup-header">Alerts</div>
+
+      <div id="popup-alert-list">
+        <!-- alerts will come here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ALERT DETAIL POPUP -->
+  <div id="alertDetailPopup" class="alert-popup">
+    <div class="alert-popup-content">
+      <button onclick="closeAlertDetail()">X</button>
+      <div id="alertDetailBox"></div>
+    </div>
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="app.js"></script>
+</body>
+
+</html>

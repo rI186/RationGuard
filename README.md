@@ -1,111 +1,106 @@
-# 🌾 RationGuard
-### Smart PDS Fraud Prevention System
-**Integrates the Civil Death Registry with the PDS Beneficiary Database**
-> SDG-2 Zero Hunger · AISSMS IOIT · B.Tech IT 2024–2028
+﻿# whatwg-url
 
----
+whatwg-url is a full implementation of the WHATWG [URL Standard](https://url.spec.whatwg.org/). It can be used standalone, but it also exposes a lot of the internal algorithms that are useful for integrating a URL parser into a project like [jsdom](https://github.com/jsdom/jsdom).
 
-## 📁 Project Structure
+## Specification conformance
 
-```
-rationguard/
-│
-├── index.html      ← All HTML (3 pages: Home, Shopkeeper, Beneficiary)
-├── style.css       ← All CSS styles and design
-├── app.js          ← Frontend JavaScript (navigation, login, interactions)
-├── server.js       ← Node.js + Express backend (API routes, simulated DB)
-├── package.json    ← Node.js project config and dependencies
-└── README.md       ← This file
-```
+whatwg-url is currently up to date with the URL spec up to commit [6c78200](https://github.com/whatwg/url/commit/6c782003a2d53b1feecd072d1006eb8f1d65fb2d).
 
----
+For `file:` URLs, whose [origin is left unspecified](https://url.spec.whatwg.org/#concept-url-origin), whatwg-url chooses to use a new opaque origin (which serializes to `"null"`).
 
-## 🚀 How to Run
+whatwg-url does not yet implement any encoding handling beyond UTF-8. That is, the _encoding override_ parameter does not exist in our API.
 
-### Option A — With Node.js Backend (Full Stack)
+## API
 
-1. Make sure [Node.js](https://nodejs.org) is installed on your system.
+### The `URL` and `URLSearchParams` classes
 
-2. Open a terminal inside the `rationguard/` folder.
+The main API is provided by the [`URL`](https://url.spec.whatwg.org/#url-class) and [`URLSearchParams`](https://url.spec.whatwg.org/#interface-urlsearchparams) exports, which follows the spec's behavior in all ways (including e.g. `USVString` conversion). Most consumers of this library will want to use these.
 
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
+### Low-level URL Standard API
 
-4. Start the server:
-   ```bash
-   node server.js
-   ```
+The following methods are exported for use by places like jsdom that need to implement things like [`HTMLHyperlinkElementUtils`](https://html.spec.whatwg.org/#htmlhyperlinkelementutils). They mostly operate on or return an "internal URL" or ["URL record"](https://url.spec.whatwg.org/#concept-url) type.
 
-5. Open your browser and go to:
-   ```
-   http://localhost:3000
-   ```
+- [URL parser](https://url.spec.whatwg.org/#concept-url-parser): `parseURL(input, { baseURL })`
+- [Basic URL parser](https://url.spec.whatwg.org/#concept-basic-url-parser): `basicURLParse(input, { baseURL, url, stateOverride })`
+- [URL serializer](https://url.spec.whatwg.org/#concept-url-serializer): `serializeURL(urlRecord, excludeFragment)`
+- [Host serializer](https://url.spec.whatwg.org/#concept-host-serializer): `serializeHost(hostFromURLRecord)`
+- [URL path serializer](https://url.spec.whatwg.org/#url-path-serializer): `serializePath(urlRecord)`
+- [Serialize an integer](https://url.spec.whatwg.org/#serialize-an-integer): `serializeInteger(number)`
+- [Origin](https://url.spec.whatwg.org/#concept-url-origin) [serializer](https://html.spec.whatwg.org/multipage/origin.html#ascii-serialisation-of-an-origin): `serializeURLOrigin(urlRecord)`
+- [Set the username](https://url.spec.whatwg.org/#set-the-username): `setTheUsername(urlRecord, usernameString)`
+- [Set the password](https://url.spec.whatwg.org/#set-the-password): `setThePassword(urlRecord, passwordString)`
+- [Has an opaque path](https://url.spec.whatwg.org/#url-opaque-path): `hasAnOpaquePath(urlRecord)`
+- [Cannot have a username/password/port](https://url.spec.whatwg.org/#cannot-have-a-username-password-port): `cannotHaveAUsernamePasswordPort(urlRecord)`
+- [Percent decode bytes](https://url.spec.whatwg.org/#percent-decode): `percentDecodeBytes(uint8Array)`
+- [Percent decode a string](https://url.spec.whatwg.org/#string-percent-decode): `percentDecodeString(string)`
 
----
+The `stateOverride` parameter is one of the following strings:
 
-### Option B — Frontend Only (No Backend)
+- [`"scheme start"`](https://url.spec.whatwg.org/#scheme-start-state)
+- [`"scheme"`](https://url.spec.whatwg.org/#scheme-state)
+- [`"no scheme"`](https://url.spec.whatwg.org/#no-scheme-state)
+- [`"special relative or authority"`](https://url.spec.whatwg.org/#special-relative-or-authority-state)
+- [`"path or authority"`](https://url.spec.whatwg.org/#path-or-authority-state)
+- [`"relative"`](https://url.spec.whatwg.org/#relative-state)
+- [`"relative slash"`](https://url.spec.whatwg.org/#relative-slash-state)
+- [`"special authority slashes"`](https://url.spec.whatwg.org/#special-authority-slashes-state)
+- [`"special authority ignore slashes"`](https://url.spec.whatwg.org/#special-authority-ignore-slashes-state)
+- [`"authority"`](https://url.spec.whatwg.org/#authority-state)
+- [`"host"`](https://url.spec.whatwg.org/#host-state)
+- [`"hostname"`](https://url.spec.whatwg.org/#hostname-state)
+- [`"port"`](https://url.spec.whatwg.org/#port-state)
+- [`"file"`](https://url.spec.whatwg.org/#file-state)
+- [`"file slash"`](https://url.spec.whatwg.org/#file-slash-state)
+- [`"file host"`](https://url.spec.whatwg.org/#file-host-state)
+- [`"path start"`](https://url.spec.whatwg.org/#path-start-state)
+- [`"path"`](https://url.spec.whatwg.org/#path-state)
+- [`"opaque path"`](https://url.spec.whatwg.org/#cannot-be-a-base-url-path-state)
+- [`"query"`](https://url.spec.whatwg.org/#query-state)
+- [`"fragment"`](https://url.spec.whatwg.org/#fragment-state)
 
-Just open `index.html` directly in any browser.
-Login will still work using the built-in fallback in `app.js`.
+The URL record type has the following API:
 
----
+- [`scheme`](https://url.spec.whatwg.org/#concept-url-scheme)
+- [`username`](https://url.spec.whatwg.org/#concept-url-username)
+- [`password`](https://url.spec.whatwg.org/#concept-url-password)
+- [`host`](https://url.spec.whatwg.org/#concept-url-host)
+- [`port`](https://url.spec.whatwg.org/#concept-url-port)
+- [`path`](https://url.spec.whatwg.org/#concept-url-path) (as an array of strings, or a string)
+- [`query`](https://url.spec.whatwg.org/#concept-url-query)
+- [`fragment`](https://url.spec.whatwg.org/#concept-url-fragment)
 
-## 🔑 Demo Login Credentials
+These properties should be treated with care, as in general changing them will cause the URL record to be in an inconsistent state until the appropriate invocation of `basicURLParse` is used to fix it up. You can see examples of this in the URL Standard, where there are many step sequences like "4. Set context object’s url’s fragment to the empty string. 5. Basic URL parse _input_ with context object’s url as _url_ and fragment state as _state override_." In between those two steps, a URL record is in an unusable state.
 
-| Portal | Field | Value |
-|---|---|---|
-| **Shopkeeper** | Shop ID | `MH-PUNE-0047` |
-| **Shopkeeper** | Password | `shop@2026` |
-| **Beneficiary** | Ration Card | `MH-2201-Y` |
-| **Beneficiary** | Password | `anand@2026` |
+The return value of "failure" in the spec is represented by `null`. That is, functions like `parseURL` and `basicURLParse` can return _either_ a URL record _or_ `null`.
 
----
+### `whatwg-url/webidl2js-wrapper` module
 
-## 🌐 API Endpoints (Backend)
+This module exports the `URL` and `URLSearchParams` [interface wrappers API](https://github.com/jsdom/webidl2js#for-interfaces) generated by [webidl2js](https://github.com/jsdom/webidl2js).
 
-| Method | Route | Description |
-|---|---|---|
-| POST | `/api/login/shopkeeper` | Shopkeeper login |
-| POST | `/api/login/beneficiary` | Beneficiary login |
-| GET | `/api/cards/:shopId` | Get all ration cards for a shop |
-| GET | `/api/card/:cardNumber` | Get single card details |
-| GET | `/api/alerts` | Get all active death alerts |
-| GET | `/api/alerts/:cardNumber` | Get alerts for a card |
-| POST | `/api/members/add` | Submit add-member request |
-| GET | `/api/ration-policy` | Get age-based ration rules |
+## Development instructions
 
----
+First, install [Node.js](https://nodejs.org/). Then, fetch the dependencies of whatwg-url, by running from this directory:
 
-## 💡 How the Death Alert System Works
+    npm install
 
-The system is **fully automatic** — no family or shopkeeper submits alerts.
+To run tests:
 
-1. **NDR Query** — Every midnight, RationGuard queries the National Death Register (NDR).
-2. **Match** — Deceased person's Name + DOB + City + State + Aadhaar are fuzzy-matched against PDS records.
-3. **Alert #1** — If match confidence ≥ 80%, Alert #1 is raised. Shopkeeper and family are notified.
-4. **Alert #2** — After 7 days unresolved, Alert #2 is issued. Ration share is withheld at FPS.
-5. **Alert #3** — Final warning. Family has 7 more days to dispute.
-6. **Auto-Block** — After 3 unresolved alerts, the member is permanently blocked in the PDS database.
+    npm test
 
----
+To generate a coverage report:
 
-## 🛠️ Tech Stack
+    npm run coverage
 
-| Layer | Technology |
-|---|---|
-| Frontend HTML | `index.html` |
-| Frontend CSS | `style.css` |
-| Frontend JS | `app.js` |
-| Backend | Node.js + Express (`server.js`) |
-| Database (demo) | Simulated in-memory data in `server.js` |
-| Fonts | Google Fonts (Playfair Display, DM Sans, DM Mono) |
+To build and run the live viewer:
 
----
+    npm run prepare
+    npm run build-live-viewer
 
-## 👩‍💻 Developed By
+Serve the contents of the `live-viewer` directory using any web server.
 
-**Swamini** — B.Tech IT, AISSMS IOIT, Pune (2024–2028 Batch)
+## Supporting whatwg-url
 
-Project aligned with **UN SDG-2: Zero Hunger**
+The jsdom project (including whatwg-url) is a community-driven project maintained by a team of [volunteers](https://github.com/orgs/jsdom/people). You could support us by:
+
+- [Getting professional support for whatwg-url](https://tidelift.com/subscription/pkg/npm-whatwg-url?utm_source=npm-whatwg-url&utm_medium=referral&utm_campaign=readme) as part of a Tidelift subscription. Tidelift helps making open source sustainable for us while giving teams assurances for maintenance, licensing, and security.
+- Contributing directly to the project.
